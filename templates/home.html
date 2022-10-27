@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 description">
+            We help you create an informative, well-written, and appropriately toned invite for your party or event.
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 tell-us">
+            Let's get started on your invite! <br> 
+            Tell us some info about your event:
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 skip-header">
+            Skip any box that doesn't seem relevant to your event.
+        </div>
+        <div class="col-3"></div>
+    </div>
+    
+    <form action="/details-draft">
+        <div class="row entry">
+            <div class="col-3"></div>
+            <div class="col-1">
+                Date:
+            </div>
+            <div class="col-8">
+                <input type="text" id="date" name="date" placeholder="Date of Event">
+            </div>
+        </div>
+        <div class="row entry">
+            <div class="col-3"></div>
+            <div class="col-1">
+                Time:
+            </div>
+            <div class="col-8">
+                <input type="text" id="time" name="time" placeholder="Start Time - End Time">
+            </div>
+        </div>
+        <div class="row entry">
+            <div class="col-2"></div>
+            <div class="col-2" style="text-align: right">
+                Location:
+            </div>
+            <div class="col-8">
+                <input type="text" id="location" name="location" placeholder="Event Location">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 sub">
+                <input class="sub-btn" type="submit" value="Let's Get Started!">
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layout.html" %} {% block content %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'data.js') }}"
+></script>
+
+
+<div class="container">
+    <div class="row draft-header">
+        Draft:
+    </div>
+    <div class="row">
+        <input type="text" class="detail-draft" name="detail-draft">
+    </div>
+    <form action="/theme-draft">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6" style="text-align:left;">
+                <span style="font-weight:bold; font-size:x-large;">What kind of event is this?</span>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8" style="text-align: left;">
+                Ex: school carnival, book club meeting, Sophia's 5th birthday party
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row" style="margin-top: 20px; margin-bottom: 25px;">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align: center;">
+                <input type="text" id="type-event" name="type-event" placeholder="Event Type">
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align:center;">
+                <span style="font-weight:bold; font-size:x-large;">What tone should the invite have?</span>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align: center;">
+                Ex: celebratory, friendly, serious
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row" style="margin-top: 20px; margin-bottom: 25px;">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align: center;">
+                <input type="text" id="tone" name="tone" placeholder="Tone">
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align:center;">
+                <span style="font-weight:bold; font-size:x-large;">If you want the invite to have a theme, let us know here!</span>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align: center;">
+                Ex: princess, roaring 20s
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row" style="margin-top: 20px; margin-bottom: 25px;">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align: center;">
+                <input type="text" id="theme" name="theme" placeholder="Optional: Theme">
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6" style="text-align:center;">
+                <input class="sub-btn" type="submit" value="Enter">
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </form>
+    
+</div>
+{% endblock %}

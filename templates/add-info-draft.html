@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block content %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename = 'data.js') }}"
+></script>
+
+
+<div class="container">
+    <div class="row draft-header">
+        Draft:
+    </div>
+    <div class="row">
+        <input type="text" class="detail-draft" name="detail-draft">
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6 skip-header">
+            Here is your invitation so far. If needed, submit a correction to update any incorrect invite info. 
+            When you are ready to move on to the next step, click the green button.
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row" style="margin-top:20px;">
+        <div class="col-2" style="font-size:x-large;">
+            Correction:
+        </div>
+        <div class="col-6">
+            <input type="text" class="detail-feedback" name="detail-feedback" placeholder="Feedback">
+        </div>
+        <div class="col-3">
+            <!--On Button Press, reload the page with new information from Form-->
+            <form action="/add-info-draft">
+                <input class="correction-btn" type="submit" value="Submit Correction">
+            </form>
+        </div>
+        
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6" style="text-align: center; margin-top: 80px;">
+            <button onclick="window.location.href='/correction-or-add'" class="looks-correct" type="submit"> It All Looks Correct! </button>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{% endblock %}

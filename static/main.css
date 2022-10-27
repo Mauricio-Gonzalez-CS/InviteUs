@@ -1,0 +1,83 @@
+.bg-dark {
+    background-color: #b4daf7 !important;
+    padding: 20px;
+    border: 1px solid black;
+}
+.navbar-brand {
+    color: black !important;
+    font-size: xx-large;
+}
+.navbar-nav {
+    float:right !important;
+}
+.nav-link {
+    color:black !important;
+    font-size: x-large;
+}
+.description {
+    text-align: center;
+    color: grey;
+    padding-top: 40px;
+    font-size: larger;
+}
+.tell-us {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+    font-size: x-large;
+}
+.skip-header {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: large;
+}
+.entry {
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 25px;
+}
+input {
+    width: 330px;
+    padding: 7px;
+    font-size: large;
+    border: 1px solid black;
+    color: black;
+}
+.sub {
+    text-align: center;
+}
+.sub-btn {
+    margin-top: 20px;
+    background-color: rgb(162, 216, 162);
+    border-radius: 10px;
+    width: 200px;
+}
+.draft-header {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 15px;
+}
+.detail-draft {
+    width: 80%;
+    margin-bottom: 50px;
+}
+.detail-feedback {
+    width: 100%;
+    padding: 13px;
+}
+.correction-btn {
+    width: 100%;
+    border-radius: 10px;
+    font-size: x-large;
+    background-color: #b4daf7;
+}
+.looks-correct {
+    border-radius: 10px;
+    background-color: rgb(162, 216, 162);
+    padding: 15px;
+    font-weight: bold;
+    font-size: x-large;
+}
