@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import os
-!pip install openai
+#!pip install openai
 import openai
 import ipywidgets as widgets
 import textwrap as tw
@@ -59,9 +59,9 @@ def additional_info(info):
 def layout():
    return render_template('home.html')   
 
-@app.route('/details-draft')
+@app.route('/details-draft', methods=['POST'])
 def details():
-   return render_template('details-draft.html')  
+   return render_template('details-draft.html', invitation=invitation)  
 
 @app.route('/theme')
 def theme():
@@ -92,7 +92,7 @@ def descCorrect():
    return render_template('desc-correct-draft.html')
 
 #AJAX functions
-@app.route('/basic', methods=["POST"])
+@app.route('/basic', methods=["GET","POST"])
 def basic():
    global invitation
    json_data = request.get_json() 
@@ -107,6 +107,7 @@ def basic():
    if "location" in json_data:
       l = json_data["location"]
    basic_invitation(date=d, time=t,location=l)
+   print(invitation)
    return jsonify(invitation = invitation)
 
 

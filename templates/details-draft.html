@@ -2,15 +2,20 @@
 <script
   type="text/javascript"
   src="{{ url_for('static', filename = 'data.js') }}"
+
 ></script>
 
+<script>
+    let invitation = {{invitation|tojson}}
+    console.log(invitation)
+</script>
 
 <div class="container">
     <div class="row draft-header">
         Draft:
     </div>
     <div class="row">
-        <input type="text" class="detail-draft" name="detail-draft">
+        <input type="text" id='home-draft' class="detail-draft" name="detail-draft">
     </div>
     <div class="row">
         <div class="col-2"></div>
