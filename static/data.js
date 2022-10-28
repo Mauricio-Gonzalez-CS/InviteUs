@@ -1,13 +1,12 @@
-function home(invitation){
+function home(date, time, location) {
     $.ajax({
         type: "POST",
         url: "basic",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(invitation),
+        data: JSON.stringify({date:date, time:time, location: location}),
         success: function(result){
-            $("#home-draft").html(result); 
-            console.log(result)
+
         },          
         error: function(request, status, error){
             console.log("Error");
@@ -18,7 +17,18 @@ function home(invitation){
     });
 }
 
+
 $(document).ready(function () {
-    
+    $("form#home-form").submit(function(event) {
+        event.preventDefault();
+        var date = $("#date").val();
+        var time = $("#time").val();
+        var location = $("#location").val();
+
+        window.location.href='details-draft';
+        home(date, time, location)
+
+    })
   });
+
   
