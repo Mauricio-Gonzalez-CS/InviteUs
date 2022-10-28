@@ -3,12 +3,12 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import os
-!pip install openai
+#!pip install openai
 import openai
 import ipywidgets as widgets
 import textwrap as tw
 import re
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 app = Flask(__name__)
@@ -59,9 +59,9 @@ def additional_info(info):
 def layout():
    return render_template('home.html')   
 
-@app.route('/details-draft')
+@app.route('/details-draft', methods=['GET','POST'])
 def details():
-   return render_template('details-draft.html')  
+   return render_template('details-draft.html', invitation=invitation)  
 
 @app.route('/theme')
 def theme():
@@ -92,10 +92,13 @@ def descCorrect():
    return render_template('desc-correct-draft.html')
 
 #AJAX functions
-@app.route('/basic', methods=["POST"])
+@app.route('/basic', methods=["GET","POST"])
 def basic():
+   print('were in basic')
+   
    global invitation
    json_data = request.get_json() 
+   print(json_data)
    #assumes only get date, location, time if the user inputred something, 
    #when working on javascript we might decide to change this
    d = None
@@ -107,6 +110,11 @@ def basic():
    if "location" in json_data:
       l = json_data["location"]
    basic_invitation(date=d, time=t,location=l)
+   print(invitation)
+   return jsonify(invitation = invitation)
+
+@app.route('/invitation', methods=['GET'])
+def invitation():
    return jsonify(invitation = invitation)
 
 
