@@ -8,7 +8,8 @@ import openai
 import ipywidgets as widgets
 import textwrap as tw
 import re
-openai.api_key = "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"
+openai.api_key = "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"
+
 
 
 app = Flask(__name__)
@@ -22,6 +23,12 @@ def gpt3_invite_update(prompt):
   print("the prompt was: ", prompt)
   print("the result was:", r[0])
   invitation = r[0]
+  checking()
+
+def checking():
+   global invitation
+   print("check")
+   print("inivitation now is:", invitation)
 
 def basic_invitation(date=None, time=None, location=None):
   prompt = "Create a basic invitation for an event "
@@ -113,8 +120,22 @@ def basic():
    print(invitation)
    return jsonify(invitation = invitation)
 
-@app.route('/invitation', methods=['GET'])
-def invitation():
+@app.route('/invite', methods=['GET','POST'])   
+def invite():
+   global invitation
+   print("####")
+   print("I am about to return:")
+   print(invitation)
+   return jsonify(invitation = invitation)
+
+@app.route('/fix', methods =["GET","POST"])
+def fix():
+   global invitation
+   print("in fix")
+   json_data = request.get_json() 
+   c = json_data["correction"]
+   correction(c)
+   print(invitation)
    return jsonify(invitation = invitation)
 
 

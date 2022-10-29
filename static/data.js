@@ -24,9 +24,8 @@ $(document).ready(function () {
         var date = $("#date").val();
         var time = $("#time").val();
         var location = $("#location").val();
-
-        window.location.href='details-draft';
         home(date, time, location)
+        setTimeout(function(){window.location.href='details-draft'},5000)
 
     })
   });
